@@ -1,4 +1,4 @@
-undergrid
+UnderGrid
 =========
 
-Master grid system for create faster and cool responsive websites
+Fast and easy grid system for codign "responsive websites"
