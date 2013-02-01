@@ -1,0 +1,48 @@
+//****************************************************************** GRID COMPLEMENTS */
+/*-------------------------------------- Hide Elements */
+.h{
+	display: none;
+}
+.hG, [class*="g_"].hG{
+	@media @mediaBig { display: none; }
+}
+.hT, [class*="g_"].hT{
+	@media @mediaTablet { display: none; }
+}
+.hM, [class*="g_"].hM{
+	@media @mediaMobile { display: none; }
+}
+
+/*-------------------------------------- Float Elements */
+/* Left */
+.lB, [class*="g_"].lB{
+	@media @mediaBig { float: left; }
+}
+.lT, [class*="g_"].lT{
+	@media @mediaTablet { float: left; }
+}
+.lM, [class*="g_"].lM{
+	@media @mediaMobile { float: left; }
+}
+/* Right */
+.rB, [class*="g_"].rB{
+	@media @mediaBig { float: right; }
+}
+.rT, [class*="g_"].rT{
+	@media @mediaTablet { float: right; }
+}
+.rM, [class*="g_"].rM{
+	@media @mediaMobile { float: right; }
+}
+
+/*-------------------------------------- Class w1-w100 */
+@iterations: 100;
+.loopingClass (@index) when (@index > 0) {
+	(~".w_@{index}"){ width: ~`"@{index}"+'%'`; }
+	(~".wB_@{index}"){ @media @mediaBig { width: ~`"@{index}"+'%'`; } }
+	(~".wT_@{index}"){ @media @mediaTablet { width: ~`"@{index}"+'%'`; } }
+	(~".wM_@{index}"){ @media @mediaMobile { width: ~`"@{index}"+'%'`; } }
+	.loopingClass(@index - 1);
+}
+.loopingClass(0) {}
+.loopingClass(@iterations);

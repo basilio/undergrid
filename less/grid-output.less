@@ -1,0 +1,61 @@
+//****************************************************************** GRID STYLES */
+/*-------------------------------------- !IMPORTANT, don`t remove or modify this rules */
+* {
+	.box-sizing( border-box );
+}
+*::before, *::after {
+	.box-sizing( border-box );
+}
+
+/*-------------------------------------- Base Container */
+.container{
+	position: relative;
+	clear: both;
+	.container_width();
+	margin: 0 auto;
+}
+
+/*-------------------------------------- Row: grids wrapper */
+.row{
+	width: auto;
+	.row{
+		margin: 0 ( @gridGutter * -1  );
+	}
+	&.row-inside [class*="g_"], [class*="g_"] > *:last-child{
+		margin-bottom: 0;
+	}
+	[class*="g_"] + [class*="g_"]:last-child{
+		float: right;
+	}
+}
+.row:after{
+	visibility: hidden;
+	display: block;
+	clear: both;
+	height: 0;
+	font-size: 0;
+	content: " ";
+}
+* html{
+	.row{
+		zoom: 1;
+	}
+}
+
+/*-------------------------------------- General grids properties */
+[class*="g_"]{
+	position: relative;
+	float: left;
+	min-height: 1px; // prevent collapsing columns
+	margin-bottom: @gridMarginBottom;
+	overflow: hidden;
+	.gutter();
+}
+
+/*-------------------------------------- Grids generate */
+.gX(@gridColumns);	// Normal
+.gBX(@gridColumns);	// Force Width on Big Screens
+.gTX(@gridColumns);	// Force Width on Tablet Screens
+
+/*-------------------------------------- Offset generate */
+.offX(@gridColumns);

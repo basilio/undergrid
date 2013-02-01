@@ -1,0 +1,103 @@
+//****************************************************************** FONTS */
+body{
+	font: @baseFontSize e('/') @baseLineHeight @baseFontFamily;
+	*font-size: small;
+	*font: x-small;
+}
+/*-------------------------------------- Links */
+a{
+	text-decoration: none;
+	color: @linkColor;
+	&:active, &:focus{ outline: 0; }
+	&:hover{ text-decoration: underline; }
+}
+/*-------------------------------------- Inline tags elements */
+small   { font-size: 85%; }
+strong  { font-weight: bold; }
+em      { font-style: italic; }
+del	{ text-decoration: line-through; }
+sup	{ vertical-align: super; }
+sub	{ vertical-align: sub; }
+/* Definitions */
+abbr, acronym, dfn {
+	cursor: help;
+}
+/* Monospaces */
+pre, code, kbd, samp, tt {
+	font-family: monospace;
+	line-height: 100%
+}
+/* horizontal lines */
+hr {
+	clear: both;
+	margin: @baseMargin 0;
+	border: 0;
+	border-top: 1px solid @grayLight;
+	border-bottom: 1px solid @white;
+}
+/*-------------------------------------- Normal Text */
+p{
+	margin: 0 0 @baseMargin 0;
+	line-height: 1.5;
+}
+/*-------------------------------------- Headings */
+h1, h2, h3, h4, h5, h6{
+	margin-bottom: @baseMargin;
+	font-family: @headingsFontFamily;
+	font-weight: @headingsFontWeight;
+	line-height: @baseLineHeight;
+	text-rendering: optimizelegibility; // Fix the character spacing for headings
+	small{
+		font-weight: normal;
+		line-height: 1;
+		color: @grayLight;
+	}
+}
+
+/* Heading Line height */
+h1, h2, h3 { line-height: @baseLineHeight; }
+/* Heading font size */
+h1 { font-size: 270%; font-weight: bold; text-transform: uppercase; }
+h2 { font-size: 182%; }
+h3 { font-size: 153.9%; color: @gray; }
+h4 { font-size: 131%; font-weight: bold; }
+h5 { font-size: 116%; }
+h6 { font-size: 108%; }
+/*-------------------------------------- Lists */
+ul, ol	{ margin-bottom: @baseMargin; }
+li	{ line-height: @baseLineHeight; }
+/*-------------------------------------- Description Lists */
+dl {
+	margin-bottom: @baseMargin;
+}
+dt, dd {
+	line-height: @baseLineHeight;
+}
+dt {
+	margin-bottom: @baseMargin/2;
+	font-weight: bold;
+}
+dd {
+	margin-bottom: @baseMargin/2;
+	margin-left: @baseMargin/2;
+	& + dt{
+		margin-top: @baseMargin;
+	}
+}
+/*-------------------------------------- Figure */
+figcaption{
+	font: italic 93% e('/') 130% @serifFontFamily;
+	color: @gray;
+}
+/*-------------------------------------- Blockquotes */
+blockquote {
+	margin-bottom: @baseMargin;
+	p {
+		margin-bottom: 0;
+		font-family: @serifFontFamily;
+		font-style: italic;
+	}
+}
+q:before, q:after, blockquote:before, blockquote:after {
+	content: "";
+}
