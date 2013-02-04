@@ -109,7 +109,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-12 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }
@@ -129,7 +129,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-11 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }
@@ -149,7 +149,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-10 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }
@@ -169,7 +169,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-9 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }
@@ -189,7 +189,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-8 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }
@@ -209,7 +209,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-7 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }
@@ -229,7 +229,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-6 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }
@@ -249,7 +249,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-5 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }
@@ -269,7 +269,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-4 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }
@@ -289,7 +289,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-3 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }
@@ -309,7 +309,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-2 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }
@@ -329,7 +329,7 @@
 @media only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 )  {
   .grid-1 {
     float: none !important;
-    width: 96%;
+    width: 300px;
     margin: 0 auto 20px auto;
   }
 }

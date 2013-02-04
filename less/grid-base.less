@@ -59,7 +59,7 @@
 .grid-mobile(@columns){
 	@media @mediaMobile {
 		float: none !important;
-		width: 96%;
+		width: @gridMobileContainer - ( @gridGutter * 2 );
 		margin: 0 auto @gridMarginBottom auto;
 	}
 }
