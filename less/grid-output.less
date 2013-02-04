@@ -21,10 +21,10 @@
 	.row{
 		margin: 0 ( @gridGutter * -1  );
 	}
-	&.row-inside [class*="g_"], [class*="g_"] > *:last-child{
+	(~"@{gridPrefixSelector} > *:last-child"){
 		margin-bottom: 0;
 	}
-	[class*="g_"] + [class*="g_"]:last-child{
+	(~"@{gridPrefixSelector} + @{gridPrefixSelector}:last-child"){
 		float: right;
 	}
 }
@@ -43,7 +43,7 @@
 }
 
 /*-------------------------------------- General grids properties */
-[class*="g_"]{
+(~"@{gridPrefixSelector}"){
 	position: relative;
 	float: left;
 	min-height: 1px; // prevent collapsing columns
@@ -53,9 +53,9 @@
 }
 
 /*-------------------------------------- Grids generate */
-.gX(@gridColumns);	// Normal
-.gBX(@gridColumns);	// Force Width on Big Screens
-.gTX(@gridColumns);	// Force Width on Tablet Screens
+.gridX(@gridColumns);	// Normal
+.grid-largeX(@gridColumns);	// Force Width on Big Screens
+.grid-tabletX(@gridColumns);	// Force Width on Tablet Screens
 
 /*-------------------------------------- Offset generate */
-.offX(@gridColumns);
+.pushX(@gridColumns);

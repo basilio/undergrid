@@ -1,7 +1,11 @@
 //****************************************************************** EXAMPLE DOCS */
-/* Row example - border and margin */
+.container{
+	padding-top: @basePadding;
+	padding-bottom: @basePadding;
+}
+/*-------------------------------------- Row examples */
 .row.example{
-	[class^="g_"]{
+	(~"@{gridPrefixSelector}"){
 		padding-top: @basePadding;
 		padding-bottom: @basePadding;
 		border: 1px solid @gray;
@@ -16,5 +20,51 @@
 		 * margin: 0 ( ( @gridGutter + 1) * -1 );
 		 **/
 		margin: 0 -11px;
+	}
+}
+.widget{
+	(~"@{gridPrefixSelector}:last-child"){
+		margin-bottom: 0;
+	}
+}
+/*-------------------------------------- Background Grid */
+#background-grid{
+	position: fixed;
+	top: 0;
+	left: 0;
+	.size(100%,100%);
+	.container, .row, (~"@{gridPrefixSelector}"){
+		height: 100% !important;
+	}
+	(~"@{gridPrefixSelector}"){
+		background-color: @grayLighter;
+	}
+}
+/*-------------------------------------- Structure */
+#header, #main, #footer{
+	position: relative;
+	z-index: 2;
+}
+#header{
+	(~"@{gridPrefixSelector}"){
+		margin-bottom: 0;
+	}
+}
+/*-------------------------------------- Helpers */
+.wide-image{
+	width: 100%
+}
+/*-------------------------------------- hFeed List */
+ul.hfeed{
+	li{
+		padding: 10px 0 5px 0;
+		font-size: 93%;
+		border-top: 1px dotted @grayLight;
+		&:first-child{
+			border-top: none;
+		}
+		a{
+			color: @gray;
+		}
 	}
 }

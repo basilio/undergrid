@@ -37,12 +37,12 @@ hr {
 }
 /*-------------------------------------- Normal Text */
 p{
-	margin: 0 0 @baseMargin 0;
-	line-height: 1.5;
+	margin: 0 0 @baseMargin / 2 0;
+	line-height: 1.4;
 }
 /*-------------------------------------- Headings */
 h1, h2, h3, h4, h5, h6{
-	margin-bottom: @baseMargin;
+	margin-bottom: @baseMargin / 2;
 	font-family: @headingsFontFamily;
 	font-weight: @headingsFontWeight;
 	line-height: @baseLineHeight;
@@ -60,15 +60,20 @@ h1, h2, h3 { line-height: @baseLineHeight; }
 h1 { font-size: 270%; font-weight: bold; text-transform: uppercase; }
 h2 { font-size: 182%; }
 h3 { font-size: 153.9%; color: @gray; }
-h4 { font-size: 131%; font-weight: bold; }
+h4 { font-family: @serifFontFamily; font-size: 131%; }
 h5 { font-size: 116%; }
 h6 { font-size: 108%; }
 /*-------------------------------------- Lists */
-ul, ol	{ margin-bottom: @baseMargin; }
-li	{ line-height: @baseLineHeight; }
+ul, ol	{
+	margin-bottom: @baseMargin / 2;
+}
+li {
+	margin-bottom:  @baseMargin / 2;
+	line-height: 1.4;
+}
 /*-------------------------------------- Description Lists */
 dl {
-	margin-bottom: @baseMargin;
+	margin-bottom: @baseMargin / 2;
 }
 dt, dd {
 	line-height: @baseLineHeight;
@@ -85,9 +90,14 @@ dd {
 	}
 }
 /*-------------------------------------- Figure */
-figcaption{
-	font: italic 93% e('/') 130% @serifFontFamily;
-	color: @gray;
+figure, figure[class*="grid-"]{
+	margin-bottom: @baseMargin / 2;
+	figcaption{
+		font-family: @serifFontFamily;
+		font-style: italic;
+		line-height: 140%;
+		color: @gray;
+	}	
 }
 /*-------------------------------------- Blockquotes */
 blockquote {

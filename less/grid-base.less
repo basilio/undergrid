@@ -10,7 +10,7 @@
 	width: @gridBaseContainer;
 }
 .container_width() when ( @gridResponsive = true ) and ( @gridType = pixels ) {
-	@media @mediaBig {
+	@media @mediaLarge {
 		width: @gridLargeContainer;
 	}
 	@media @mediaTablet {
@@ -33,30 +33,30 @@
 	padding-right: @gridGutter;
 }
 /*-------------------------------------- Grid Specify Widths by Screen */
-/* Big Screens */
-.gB(@columns) when ( @gridGutterInset = false ){
-	@media @mediaBig {
+/* Large Screens */
+.grid-large(@columns) when ( @gridGutterInset = false ){
+	@media @mediaLarge {
 		width: ( ( @gridLargeContainer / @gridColumns ) * @index ) - ( @gridGutter * 2 ) ;
 	}
 }
-.gB(@columns) when ( @gridGutterInset = true ){
-	@media @mediaBig {
+.grid-large(@columns) when ( @gridGutterInset = true ){
+	@media @mediaLarge {
 		width: ( @gridLargeContainer / @gridColumns ) * @index ;
 	}
 }
 /* Tablet Screens */
-.gT(@columns) when ( @gridGutterInset = false ){
+.grid-tablet(@columns) when ( @gridGutterInset = false ){
 	@media @mediaTablet {
 		width: ( ( @gridTabletContainer / @gridColumns ) * @index ) - ( @gridGutter * 2 ) ;
 	}
 }
-.gT(@columns) when ( @gridGutterInset = true ){
+.grid-tablet(@columns) when ( @gridGutterInset = true ){
 	@media @mediaTablet {
 		width: ( @gridTabletContainer / @gridColumns ) * @index ;
 	}
 }
 /* Mobile Screens */
-.gM(@columns){
+.grid-mobile(@columns){
 	@media @mediaMobile {
 		float: none !important;
 		width: 96%;
@@ -65,33 +65,34 @@
 }
 /*-------------------------------------- Grid Base Widths: Pixels */
 /* Gutter Outset */
-.g(@columns) when ( @gridGutterInset = false ){
+.grid(@columns) when ( @gridGutterInset = false ){
 	width: ( ( @gridBaseContainer / @gridColumns ) * @index ) - ( @gridGutter * 2 );
 }
-.g(@columns) when ( @gridResponsive = true ) and ( @gridType = pixels ) and ( @gridGutterInset = false ){
-	.gB(@columns);
-	.gT(@columns);
-	.gM(@columns);
+.grid(@columns) when ( @gridResponsive = true ) and ( @gridType = pixels ) and ( @gridGutterInset = false ){
+	.grid-large(@columns);
+	.grid-tablet(@columns);
+	.grid-mobile(@columns);
 }
 /* Gutter Inset */
-.g(@columns) when ( @gridGutterInset = true ){
+.grid(@columns) when ( @gridGutterInset = true ){
 	width: ( @gridBaseContainer / @gridColumns ) * @index;
 }
-.g(@columns) when ( @gridResponsive = true ) and ( @gridType = pixels ) and ( @gridGutterInset = true ){
-	.gB(@columns);
-	.gT(@columns);
-	.gM(@columns);
+.grid(@columns) when ( @gridResponsive = true ) and ( @gridType = pixels ) and ( @gridGutterInset = true ){
+	.grid-large(@columns);
+	.grid-tablet(@columns);
+	.grid-mobile(@columns);
 }
 
 /*-------------------------------------- Grid Base Widths: Percentages */
-.g(@columns) when ( @gridResponsive = true ) and ( @gridType = percentages ){
+.grid(@columns) when ( @gridResponsive = true ) and ( @gridType = percentages ){
 	width: ( ( @columns * 100% ) / @gridColumns ) - ( @gridGutter * 2 );
-	.gM(@columns);
+	/* get Grids Width at the same way, except for mobiles */
+	.grid-mobile(@columns);
 }
 /*-------------------------------------- Offsets */
-.off(@columns) when ( @gridType = pixels ){
+.push(@columns) when ( @gridType = pixels ){
 	margin-left: ( @gridBaseContainer / @gridColumns ) * @index;
-	@media @mediaBig {
+	@media @mediaLarge {
 		margin-left: ( @gridLargeContainer / @gridColumns ) * @index;
 	}
 	@media @mediaTablet {
@@ -101,35 +102,35 @@
 		margin-left: ( @gridMobileContainer / @gridColumns ) * @index;
 	}
 }
-.off(@columns) when ( @gridType = percentages ){
+.push(@columns) when ( @gridType = percentages ){
 	margin-left: ( @columns * 100% ) / @gridColumns;
 }
 
 /*-------------------------------------- Grid Looping */
 /* Normal Screen */
-.gX(@index) when ( @index > 0 ) {
-	(~".g_@{index}"){ .g(@index); }
-	.gX(@index - 1);
+.gridX(@index) when ( @index > 0 ) {
+	(~".@{gridPrefix}@{index}"){ .grid(@index); }
+	.gridX(@index - 1);
 }
-.gX(0){}
+.gridX(0){}
 
-/* Big Screen */
-.gBX(@index) when ( @index > 0 ) {
-	(~".gB_@{index}"){ .gB(@index); }
-	.gBX(@index - 1);
+/* Large Screen */
+.grid-largeX(@index) when ( @index > 0 ) {
+	(~".@{gridPrefix}large-@{index}"){ .grid-large(@index); }
+	.grid-largeX(@index - 1);
 }
-.gBX(0){}
+.grid-largeX(0){}
 
 /* Tablet Screen */
-.gTX(@index) when ( @index > 0 ) {
-	(~".gT_@{index}"){ .gT(@index); }
-	.gTX(@index - 1);
+.grid-tabletX(@index) when ( @index > 0 ) {
+	(~".@{gridPrefix}tablet-@{index}"){ .grid-tablet(@index); }
+	.grid-tabletX(@index - 1);
 }
-.gTX(0){}
+.grid-tabletX(0){}
 
 /*-------------------------------------- Offset Looping */
-.offX(@index) when (@index > 0) {
-	(~".off_@{index}") { .off(@index); }
-	.offX(@index - 1);
+.pushX(@index) when (@index > 0) {
+	(~".push-@{index}") { .push(@index); }
+	.pushX(@index - 1);
 }
-.offX(0){}
+.pushX(0){}
