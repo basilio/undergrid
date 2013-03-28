@@ -1,23 +1,24 @@
 //****************************************************************** GRID CONFIG */
-/*-------------------------------------- Default configuration */
+//*-------------------------------------- Default configuration */
 @gridBaseContainer:	960px;	// Container Size
 @gridColumns:		12;	// Columns to workout
 @gridType:		pixels; // Unit type "pixels" or "percentages"
 @gridResponsive:	true;	// Responsive enable option "true" or "false"
 @gridGutter:		10px;	// Default distance between columns.
 @gridGutterInset:	false;	// Gutter as margin or padding, through options "true" or "false"
+@gridGutterMobile:	5%;	// Default distance between columns.
 @gridMarginBottom:	20px;	// Margin bottom between grids
 
-/*-------------------------------------- Class Utilization */
+//*-------------------------------------- Class Utilization */
 @gridPrefix:		grid-;
 @gridPrefixSelector:	( ~"[class*='@{gridPrefix}']" );
 
-/*-------------------------------------- Responsive size support */
+//*-------------------------------------- Responsive size support */
 @gridLargeContainer:	1200px;	// Large Screens
 @gridTabletContainer:	720px;	// Tablet Screens (portrait)
-@gridMobileContainer:	320px;	// Mobile Screens (portrait)
+@gridMobileContainer:	100%;	// Mobile Screens (portrait)
 
-/*-------------------------------------- Responsive media conditions */
-@mediaLarge: ( ~"only screen and ( min-width : 1360px )");
-@mediaTablet: ( ~"only screen and ( min-width : 720px ) and ( max-width : 960px ), only screen and ( min-device-width : 720px ) and ( max-device-width : 960px ) and ( orientation : portrait ) ");
-@mediaMobile: ( ~"only screen and ( max-width : 720px ), only screen and ( -webkit-min-device-pixel-ratio : 1.5 ), only screen and ( min-device-pixel-ratio : 1.5 ) ");
+//*-------------------------------------- Responsive media conditions */
+@mediaLarge: 	( ~"only screen and ( min-width : 1360px )");
+@mediaTablet: 	( ~"only screen and ( min-width : 720px ) and ( max-width : 960px )");
+@mediaMobile: 	( ~"only screen and ( max-width : 720px )");

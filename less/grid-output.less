@@ -11,8 +11,8 @@
 .container{
 	position: relative;
 	clear: both;
-	.container_width();
 	margin: 0 auto;
+	.container_width();
 }
 
 /*-------------------------------------- Row: grids wrapper */
@@ -49,13 +49,13 @@
 	min-height: 1px; // prevent collapsing columns
 	margin-bottom: @gridMarginBottom;
 	overflow: hidden;
+	*overflow: inherit; // IE7 Hack
 	.gutter();
 }
 
 /*-------------------------------------- Grids generate */
-.gridX(@gridColumns);	// Normal
-.grid-largeX(@gridColumns);	// Force Width on Big Screens
-.grid-tabletX(@gridColumns);	// Force Width on Tablet Screens
-
+.grid-generate(@gridColumns);
+.grid-generate-responsive(@gridColumns);
 /*-------------------------------------- Offset generate */
-.pushX(@gridColumns);
+.push-generate(@gridColumns);
+.push-generate-responsive(@gridColumns);
