@@ -52,6 +52,24 @@
 	*overflow: inherit; // IE7 Hack
 	.gutter();
 }
+(~"@{gridPrefixSelector}.gutter-inset"){
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: @gridGutter;
+	padding-right: @gridGutter;
+}
+(~"@{gridPrefixSelector}.gutter-outset"){
+	margin-left: @gridGutter;
+	margin-right: @gridGutter;
+	padding-left: 0;
+	padding-right: 0;
+}
+(~"@{gridPrefixSelector}.no-gutter"){
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
 
 /*-------------------------------------- Grids generate */
 .grid-generate(@gridColumns);

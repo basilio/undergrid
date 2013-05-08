@@ -5,12 +5,12 @@
 @gridType:		pixels; // Unit type "pixels" or "percentages"
 @gridResponsive:	true;	// Responsive enable option "true" or "false"
 @gridGutter:		10px;	// Default distance between columns.
-@gridGutterInset:	false;	// Gutter as margin or padding, through options "true" or "false"
+@gridGutterInside:	false;	// Gutter as margin or padding, through options "true" or "false"
 @gridGutterMobile:	5%;	// Default distance between columns.
-@gridMarginBottom:	20px;	// Margin bottom between grids
+@gridMarginBottom:	@gridGutter*2;	// Margin bottom between grids
 
 //*-------------------------------------- Class Utilization */
-@gridPrefix:		span;
+@gridPrefix:		grid-;
 @gridPrefixSelector:	( ~"[class*='@{gridPrefix}']" );
 
 //*-------------------------------------- Responsive size support */

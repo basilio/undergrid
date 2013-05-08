@@ -10,7 +10,7 @@
 .container_width(){
 	width: @gridBaseContainer;
 }
-.container_width() when ( @gridResponsive = true ) and ( @gridType = pixels ){
+.container_width() when ( @gridResponsive = true ){
 	@media @mediaLarge {
 		width: @gridLargeContainer;
 	}
@@ -21,80 +21,75 @@
 		width: @gridMobileContainer;
 	}
 }
-.container_width() when ( @gridResponsive = true ) and ( @gridType = percentages ){
-	width: 90%;
-}
 
 //*-------------------------------------- Gutter Type */
 //* Gutter Outset */
-.gutter() when ( @gridGutterInset = false ){
+.gutter() when ( @gridGutterInside = false ){
 	margin-left: @gridGutter;
 	margin-right: @gridGutter;
 }
 //* Gutter Inset */
-.gutter() when ( @gridGutterInset = true ){
+.gutter() when ( @gridGutterInside = true ){
 	padding-left: @gridGutter;
 	padding-right: @gridGutter;
 }
 
 //*-------------------------------------- Grid Base Widths: Pixels */
 //* Normal Screens */
-.grid(@columns) when ( @gridGutterInset = false ){
+.grid(@columns) when ( @gridGutterInside = false ){
 	width: ( ( @gridBaseContainer / @gridColumns ) * @index ) - ( @gridGutter * 2 );
 }
-.grid(@columns) when ( @gridGutterInset = true ){
+.grid(@columns) when ( @gridGutterInside = true ){
 	width: ( @gridBaseContainer / @gridColumns ) * @index;
 }
 //* Large Screens */
-.grid-large(@columns) when ( @gridGutterInset = false ){
+.grid-large(@columns) when ( @gridGutterInside = false ){
 	width: ( ( @gridLargeContainer / @gridColumns ) * @index ) - ( @gridGutter * 2 ) ;
 }
-.grid-large(@columns) when ( @gridGutterInset = true ){
+.grid-large(@columns) when ( @gridGutterInside = true ){
 	width: ( @gridLargeContainer / @gridColumns ) * @index ;
 }
 //* Tablet Screens */
-.grid-tablet(@columns) when ( @gridGutterInset = false ){
+.grid-tablet(@columns) when ( @gridGutterInside = false ){
 	width: ( ( @gridTabletContainer / @gridColumns ) * @index ) - ( @gridGutter * 2 ) ;
 }
-.grid-tablet(@columns) when ( @gridGutterInset = true ){
+.grid-tablet(@columns) when ( @gridGutterInside = true ){
 	width: ( @gridTabletContainer / @gridColumns ) * @index ;
 }
 //* Mobile Screens */
-.grid-mobile(@columns) when ( @gridGutterInset = false ){
+.grid-mobile(@columns) when ( @gridGutterInside = false ){
 	width: ( @gridMobileContainer ) - ( @gridGutterMobile * 2 ) ;
 }
-.grid-mobile(@columns) when ( @gridGutterInset = true ){
+.grid-mobile(@columns) when ( @gridGutterInside = true ){
 	width: @gridMobileContainer ;
 }
 
 //*-------------------------------------- Grid Base Widths: Percentages */
 .grid(@columns) when ( @gridResponsive = true ) and ( @gridType = percentages ){
 	width: ( ( @columns * 100% ) / @gridColumns ) - ( @gridGutter * 2 );
-	/* get Grids Width at the same way, except for mobiles */
-	.grid-mobile(@columns);
 }
 
 
 //*-------------------------------------- Push Margins: Pixels */
 //* Normal Screens */
-.push(@columns) when ( @gridGutterInset = false ){
+.push(@columns) when ( @gridGutterInside = false ){
 	margin-left: ( ( @gridBaseContainer / @gridColumns ) * @index )  - ( @gridGutter * 2 );
 }
-.push(@columns) when ( @gridGutterInset = true ){
+.push(@columns) when ( @gridGutterInside = true ){
 	margin-left: ( @gridBaseContainer / @gridColumns ) * @index;
 }
 //* Large Screens */
-.push-large(@columns) when ( @gridGutterInset = false ){
+.push-large(@columns) when ( @gridGutterInside = false ){
 	margin-left: ( ( @gridLargeContainer / @gridColumns ) * @index )  - ( @gridGutter * 2 );
 }
-.push-large(@columns) when ( @gridGutterInset = true ){
+.push-large(@columns) when ( @gridGutterInside = true ){
 	margin-left: ( @gridLargeContainer / @gridColumns ) * @index ;
 }
 //* Tablet Screens */
-.push-tablet(@columns) when ( @gridGutterInset = false ){
+.push-tablet(@columns) when ( @gridGutterInside = false ){
 	margin-left: ( ( @gridTabletContainer / @gridColumns ) * @index )  - ( @gridGutter * 2 );
 }
-.push-tablet(@columns) when ( @gridGutterInset = true ){
+.push-tablet(@columns) when ( @gridGutterInside = true ){
 	margin-left: ( @gridTabletContainer / @gridColumns ) * @index ;
 }
 
@@ -216,7 +211,7 @@
 		}
 	}
 }
-.grid-generate-responsive(@gridColumns) when (@gridResponsive = true) and (@gridGutterInset = true){
+.grid-generate-responsive(@gridColumns) when (@gridResponsive = true) and (@gridGutterInside = true){
 	@media @mediaMobile{
 		(~"@{gridPrefixSelector}"){
 			padding-left: @gridGutterMobile;
