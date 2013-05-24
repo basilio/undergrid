@@ -139,38 +139,137 @@
 .grid-largeX(0){}
 .grid-tabletX(0){}
 
-//*-------------------------------------- Push Looping */
-// Push Normal
-.pushX(@index) when (@index > 0) {
-	(~".push-@{index}"){ .push(@index); }
-	.pushX(@index - 1);
+//*-------------------------------------- Relative Left Looping */
+// Normal
+.relative-leftX(@index) when (@index > 0) {
+	(~".relative-left-@{index}"){ .relative-left(@index); }
+	.relative-leftX(@index - 1);
 }
-// Push Normal: Responsive Large
-.pushX_large(@index) when (@index > 0) {
-	(~".push-@{index}"){ .push-large(@index); }
-	.pushX_large(@index - 1);
+// Responsive Large
+.relative-leftX_large(@index) when (@index > 0) {
+	(~".relative-left-@{index}"){ .relative-left-large(@index); }
+	.relative-leftX_large(@index - 1);
 }
-// Push Normal: Responsive Tablet
-.pushX_tablet(@index) when (@index > 0) {
-	(~".push-@{index}"){ .push-tablet(@index); }
-	.pushX_tablet(@index - 1);
+// Responsive Tablet
+.relative-leftX_tablet(@index) when (@index > 0) {
+	(~".relative-left-@{index}"){ .relative-left-tablet(@index); }
+	.relative-leftX_tablet(@index - 1);
 }
-// Push Transform: Large 
-.push-largeX(@index) when (@index > 0) and (@gridResponsive = true) {
-	(~".push-large-@{index}"){ .push-large(@index); }
-	.push-largeX(@index - 1);
+// Transform: Large 
+.relative-left-largeX(@index) when (@index > 0) and (@gridResponsive = true) {
+	(~".relative-left-large-@{index}"){ .relative-left-large(@index); }
+	.relative-left-largeX(@index - 1);
 }
-// Push Transform: Tablet
-.push-tabletX(@index) when (@index > 0) and (@gridResponsive = true) {
-	(~".push-tablet-@{index}"){ .push-tablet(@index); }
-	.push-tabletX(@index - 1);
+// Transform: Tablet
+.relative-left-tabletX(@index) when (@index > 0) and (@gridResponsive = true) {
+	(~".relative-left-tablet-@{index}"){ .relative-left-tablet(@index); }
+	.relative-left-tabletX(@index - 1);
 }
 // Set mixin
-.pushX(0){}
-.pushX_large(0){}
-.pushX_tablet(0){}
-.push-largeX(0){}
-.push-tabletX(0){}
+.relative-leftX(0){}
+.relative-leftX_large(0){}
+.relative-leftX_tablet(0){}
+.relative-left-largeX(0){}
+.relative-left-tabletX(0){}
+
+//*-------------------------------------- Relative Right Looping */
+// Normal
+.relative-rightX(@index) when (@index > 0) {
+	(~".relative-right-@{index}"){ .relative-right(@index); }
+	.relative-rightX(@index - 1);
+}
+// Responsive Large
+.relative-rightX_large(@index) when (@index > 0) {
+	(~".relative-right-@{index}"){ .relative-right-large(@index); }
+	.relative-rightX_large(@index - 1);
+}
+// Responsive Tablet
+.relative-rightX_tablet(@index) when (@index > 0) {
+	(~".relative-right-@{index}"){ .relative-right-tablet(@index); }
+	.relative-rightX_tablet(@index - 1);
+}
+// Transform: Large 
+.relative-right-largeX(@index) when (@index > 0) and (@gridResponsive = true) {
+	(~".relative-right-large-@{index}"){ .relative-right-large(@index); }
+	.relative-right-largeX(@index - 1);
+}
+// Transform: Tablet
+.relative-right-tabletX(@index) when (@index > 0) and (@gridResponsive = true) {
+	(~".relative-right-tablet-@{index}"){ .relative-right-tablet(@index); }
+	.relative-right-tabletX(@index - 1);
+}
+// Set mixin
+.relative-rightX(0){}
+.relative-rightX_large(0){}
+.relative-rightX_tablet(0){}
+.relative-right-largeX(0){}
+.relative-right-tabletX(0){}
+
+//*-------------------------------------- Absolute Left Looping */
+// Normal
+.absolute-leftX(@index) when (@index > 0) {
+	(~".absolute-left-@{index}"){ .absolute-left(@index); }
+	.absolute-leftX(@index - 1);
+}
+// Responsive Large
+.absolute-leftX_large(@index) when (@index > 0) {
+	(~".absolute-left-@{index}"){ .absolute-left-large(@index); }
+	.absolute-leftX_large(@index - 1);
+}
+// Responsive Tablet
+.absolute-leftX_tablet(@index) when (@index > 0) {
+	(~".absolute-left-@{index}"){ .absolute-left-tablet(@index); }
+	.absolute-leftX_tablet(@index - 1);
+}
+// Transform: Large 
+.absolute-left-largeX(@index) when (@index > 0) and (@gridResponsive = true) {
+	(~".absolute-left-large-@{index}"){ .absolute-left-large(@index); }
+	.absolute-left-largeX(@index - 1);
+}
+// Transform: Tablet
+.absolute-left-tabletX(@index) when (@index > 0) and (@gridResponsive = true) {
+	(~".absolute-left-tablet-@{index}"){ .absolute-left-tablet(@index); }
+	.absolute-left-tabletX(@index - 1);
+}
+// Set mixin
+.absolute-leftX(0){}
+.absolute-leftX_large(0){}
+.absolute-leftX_tablet(0){}
+.absolute-left-largeX(0){}
+.absolute-left-tabletX(0){}
+
+//*-------------------------------------- Absolute Right Looping */
+// Normal
+.absolute-rightX(@index) when (@index > 0) {
+	(~".absolute-right-@{index}"){ .absolute-right(@index); }
+	.absolute-rightX(@index - 1);
+}
+// Responsive Large
+.absolute-rightX_large(@index) when (@index > 0) {
+	(~".absolute-right-@{index}"){ .absolute-right-large(@index); }
+	.absolute-rightX_large(@index - 1);
+}
+// Responsive Tablet
+.absolute-rightX_tablet(@index) when (@index > 0) {
+	(~".absolute-right-@{index}"){ .absolute-right-tablet(@index); }
+	.absolute-rightX_tablet(@index - 1);
+}
+// Transform: Large 
+.absolute-right-largeX(@index) when (@index > 0) and (@gridResponsive = true) {
+	(~".absolute-right-large-@{index}"){ .absolute-right-large(@index); }
+	.absolute-right-largeX(@index - 1);
+}
+// Transform: Tablet
+.absolute-right-tabletX(@index) when (@index > 0) and (@gridResponsive = true) {
+	(~".absolute-right-tablet-@{index}"){ .absolute-right-tablet(@index); }
+	.absolute-right-tabletX(@index - 1);
+}
+// Set mixin
+.absolute-rightX(0){}
+.absolute-rightX_large(0){}
+.absolute-rightX_tablet(0){}
+.absolute-right-largeX(0){}
+.absolute-right-tabletX(0){}
 
 //*-------------------------------------- Grid Generates */
 // Normal Screens
@@ -220,26 +319,98 @@
 	}
 }
 
-//*-------------------------------------- Push Generates */
+//*-------------------------------------- Relative Margin Left */
 // Normal Screens
-.push-generate(@gridColumns){
+.relative-left-generate(@gridColumns){
 /* Normal */
-	.pushX(@gridColumns);
+	.relative-leftX(@gridColumns);
 }
 // Responsive Screens
-.push-generate-responsive(@gridColumns){}
-.push-generate-responsive(@gridColumns) when (@gridResponsive = true){
+.relative-left-generate-responsive(@gridColumns){}
+.relative-left-generate-responsive(@gridColumns) when (@gridResponsive = true){
 /* Responsive Support */
 	@media @mediaLarge{
-		/* Responsive Push */
-		.pushX_large(@gridColumns);
-		/* Transform Push */
-		.push-largeX(@gridColumns);	
+		/* Responsive relative-left */
+		.relative-leftX_large(@gridColumns);
+		/* Transform relative-left */
+		.relative-left-largeX(@gridColumns);	
 	}
 	@media @mediaTablet{
-		/* Responsive Push */
-		.pushX_tablet(@gridColumns);
-		/* Transform Push */
-		.push-tabletX(@gridColumns);
+		/* Responsive relative-left */
+		.relative-leftX_tablet(@gridColumns);
+		/* Transform relative-left */
+		.relative-left-tabletX(@gridColumns);
+	}
+}
+
+//*-------------------------------------- Relative Margin Right */
+// Normal Screens
+.relative-right-generate(@gridColumns){
+/* Normal */
+	.relative-rightX(@gridColumns);
+}
+// Responsive Screens
+.relative-right-generate-responsive(@gridColumns){}
+.relative-right-generate-responsive(@gridColumns) when (@gridResponsive = true){
+/* Responsive Support */
+	@media @mediaLarge{
+		/* Responsive relative-right */
+		.relative-rightX_large(@gridColumns);
+		/* Transform relative-right */
+		.relative-right-largeX(@gridColumns);	
+	}
+	@media @mediaTablet{
+		/* Responsive relative-right */
+		.relative-rightX_tablet(@gridColumns);
+		/* Transform relative-right */
+		.relative-right-tabletX(@gridColumns);
+	}
+}
+
+//*-------------------------------------- Absolute Left Generates */
+// Normal Screens
+.absolute-left-generate(@gridColumns){
+/* Normal */
+	.absolute-leftX(@gridColumns);
+}
+// Responsive Screens
+.absolute-left-generate-responsive(@gridColumns){}
+.absolute-left-generate-responsive(@gridColumns) when (@gridResponsive = true){
+/* Responsive Support */
+	@media @mediaLarge{
+		/* Responsive absolute-left */
+		.absolute-leftX_large(@gridColumns);
+		/* Transform absolute-left */
+		.absolute-left-largeX(@gridColumns);	
+	}
+	@media @mediaTablet{
+		/* Responsive absolute-left */
+		.absolute-leftX_tablet(@gridColumns);
+		/* Transform absolute-left */
+		.absolute-left-tabletX(@gridColumns);
+	}
+}
+
+//*-------------------------------------- Absolute Right Generates */
+// Normal Screens
+.absolute-right-generate(@gridColumns){
+/* Normal */
+	.absolute-rightX(@gridColumns);
+}
+// Responsive Screens
+.absolute-right-generate-responsive(@gridColumns){}
+.absolute-right-generate-responsive(@gridColumns) when (@gridResponsive = true){
+/* Responsive Support */
+	@media @mediaLarge{
+		/* Responsive absolute-right */
+		.absolute-rightX_large(@gridColumns);
+		/* Transform absolute-right */
+		.absolute-right-largeX(@gridColumns);	
+	}
+	@media @mediaTablet{
+		/* Responsive absolute-right */
+		.absolute-rightX_tablet(@gridColumns);
+		/* Transform absolute-right */
+		.absolute-right-tabletX(@gridColumns);
 	}
 }
